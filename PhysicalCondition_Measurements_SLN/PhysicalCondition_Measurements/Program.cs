@@ -28,12 +28,24 @@ namespace PhysicalCondition_Measurements
             } while (!decimal.TryParse(Console.ReadLine(), out maxHR));
             #endregion
 
-            PhysicalCondition physicalCondition = new PhysicalCondition(maxHR, restHR, weight);
-            Console.WriteLine($"Your Physical Condition is: {physicalCondition.CalcPhyCondition()}");
+            Console.Clear();
 
-            Console.WriteLine("--------------------------------------------------------");
+            #region Showing what was typed in.
+            Console.WriteLine("-------------------------------------------------");
+            Console.WriteLine("This is what you've entered into the Calculator:");
+            Console.WriteLine("-------------------------------------------------");
             Console.WriteLine($"Weight: {weight}.\nResting Heart Rate: {restHR}.\nMaximum Heart Rate: {maxHR}");
+            Console.WriteLine("-------------------------------------------------");
+            #endregion
+
+            #region End result of the Calculations.
             Console.WriteLine();
+            Console.WriteLine("This is your results:");
+            Console.WriteLine($"Your Physical Condition is: {PhysicalCondition.CalcPhyCondition(maxHR, restHR)}");
+            Console.WriteLine($"Your Maximum 02 Consumption is: {PhysicalCondition.CalcO2Consumption(restHR, maxHR, weight)}");
+            Console.WriteLine();
+            #endregion
+
             Console.WriteLine("Press enter to exit the program.");
             Console.ReadLine();
         }

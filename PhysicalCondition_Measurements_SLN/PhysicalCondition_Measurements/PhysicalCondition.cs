@@ -21,18 +21,26 @@ namespace PhysicalCondition_Measurements
         /// This is where we calculate the Physical Condition, using the Users input.
         /// </summary>
         /// <returns></returns>
-        public decimal CalcPhyCondition()
+        public static decimal CalcPhyCondition(decimal maxHR, decimal restHR)
         {
             decimal phyCond = 0;
 
-            phyCond = MaxHR / RestHR * (decimal)15.3;
+            phyCond = maxHR / restHR * (decimal)15.3;
 
             return Decimal.Round(phyCond);
         }
 
-        public static void CalcO2Consumption()
+        /// <summary>
+        /// This is where we calculate the Maximum 02 Consumption, using the User's input.
+        /// </summary>
+        /// <returns></returns>
+        public static decimal CalcO2Consumption(decimal restHR, decimal maxHR, decimal weight)
         {
+            decimal oxyCons = 0;
 
+            oxyCons = PhysicalCondition.CalcPhyCondition(maxHR, restHR) * weight / 1000;
+
+            return Decimal.Round(oxyCons, 1);
         }
     }
 }
