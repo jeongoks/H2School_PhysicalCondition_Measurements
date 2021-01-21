@@ -10,6 +10,7 @@ namespace PhysicalCondition_Measurements
             decimal restHR = 0;
             decimal maxHR = 0;
 
+            #region User types in Data, Input.
             do
             {
                 Console.WriteLine("Please enter your Weight in KG:");
@@ -25,6 +26,10 @@ namespace PhysicalCondition_Measurements
             {
                 Console.WriteLine("Please enter your Maximum Heart Rate per minute:");
             } while (!decimal.TryParse(Console.ReadLine(), out maxHR));
+            #endregion
+
+            PhysicalCondition physicalCondition = new PhysicalCondition(maxHR, restHR, weight);
+            Console.WriteLine($"Your Physical Condition is: {physicalCondition.CalcPhyCondition()}");
 
             Console.WriteLine("--------------------------------------------------------");
             Console.WriteLine($"Weight: {weight}.\nResting Heart Rate: {restHR}.\nMaximum Heart Rate: {maxHR}");
