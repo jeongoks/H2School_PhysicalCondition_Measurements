@@ -14,23 +14,23 @@ namespace PhysicalCondition_Measurements
             do
             {
                 Console.WriteLine("Please enter your Weight in KG:");
-            } while (!decimal.TryParse(Console.ReadLine(), out weight));
+            } while (!decimal.TryParse(Console.ReadLine(), out weight));                    // This is where the User types in their Data.
             
             do
             {
                 Console.WriteLine("Please enter your Resting Heart Rate per minute:");
 
-            } while (!decimal.TryParse(Console.ReadLine(), out restHR));
-            
+            } while (!decimal.TryParse(Console.ReadLine(), out restHR));                    // This is where the User types in their Data.
+
             do
             {
                 Console.WriteLine("Please enter your Maximum Heart Rate per minute:");
-            } while (!decimal.TryParse(Console.ReadLine(), out maxHR));
+            } while (!decimal.TryParse(Console.ReadLine(), out maxHR));                     // This is where the User types in their Data.
             #endregion
 
             Console.Clear();
 
-            #region Showing what was typed in.
+            #region Showing what was typed in, Output.
             Console.WriteLine("-------------------------------------------------");
             Console.WriteLine("This is what you've entered into the Calculator:");
             Console.WriteLine("-------------------------------------------------");
@@ -38,7 +38,7 @@ namespace PhysicalCondition_Measurements
             Console.WriteLine("-------------------------------------------------");
             #endregion
 
-            #region End result of the Calculations.
+            #region End result of the Calculations, Output.
             Console.WriteLine();
             Console.WriteLine("This is your results:");
             Console.WriteLine($"Your Physical Condition is: {PhysicalCondition.CalcPhyCondition(maxHR, restHR)}");
