@@ -68,3 +68,7 @@ For this, we have two calculations that we need to make in *Methods*.
 > **PhysicalCondition :**
 > - Changed the Methods to Static.
 > - Added Data inside of the Calc02Consumption().
+
+###### Version 1.0.1 
+
+> Changing some minor things in my documentation.
